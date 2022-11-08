@@ -16,13 +16,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.github.ebrahimi16153.noteapp.R
 import com.github.ebrahimi16153.noteapp.components.NoteButton
 import com.github.ebrahimi16153.noteapp.components.TextInput
 import com.github.ebrahimi16153.noteapp.model.Note
-import com.github.ebrahimi16153.noteapp.viewmodel.NoteViewModel
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
@@ -132,8 +130,3 @@ fun NoteRow(
 }
 
 
-@Preview(showBackground = true)
-@Composable
-fun Preview() {
-    ScreenNote(list = NoteViewModel().getNotes(), onAdd = {}, onRemove = {} )
-}
