@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.github.ebrahimi16153.noteapp.model.Note
 import com.github.ebrahimi16153.noteapp.repository.NoteRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -15,7 +16,8 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class NoteViewModel @Inject constructor(private  val repository: NoteRepository) :ViewModel() {
+@HiltViewModel
+ class NoteViewModel @Inject  constructor(private val repository: NoteRepository) :ViewModel() {
 
     private var _noteList = MutableStateFlow<List<Note>>(emptyList())
     val noteList = _noteList.asStateFlow()
